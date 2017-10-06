@@ -35,6 +35,9 @@ class Syndication_WP_RSS_Client extends SimplePie implements Syndication_Client 
 		
 		$this->set_cache_class( 'WP_Feed_Cache' );
 
+		// Increase timeout from 10s to 60s
+		$this->set_timeout( 60 );
+
 		$this->default_post_type        = get_post_meta( $site_ID, 'syn_default_post_type', true );
 		$this->default_post_status      = get_post_meta( $site_ID, 'syn_default_post_status', true );
 		$this->default_comment_status   = get_post_meta( $site_ID, 'syn_default_comment_status', true );
